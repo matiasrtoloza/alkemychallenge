@@ -1,0 +1,43 @@
+﻿@model Alkemy.Teachers
+@{
+    ViewBag.Title = "Agregar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@using (Html.BeginForm("Agregar", "Profesores", FormMethod.Post))
+{
+    <h3>Formulario profesor</h3>
+    <table cellpadding="0" cellspacing="0">
+
+        <tr>
+            @Html.TextBoxFor(m => m.Name_, new { @class = "form-control", placeholder = "Escribi tu nombre completo" })
+            @Html.ValidationMessageFor(m => m.Name_, "", new { @class = "text-danger" })
+            <br />
+
+        </tr>
+
+        <tr>
+            @Html.TextBoxFor(m => m.Last_Name, new { @class = "form-control", placeholder = "Escribi tu nombre completo" })
+            @Html.ValidationMessageFor(m => m.Last_Name, "", new { @class = "text-danger" })
+            <br />
+
+        </tr>
+
+        <tr>
+            <td>
+                @Html.TextBoxFor(m => m.Identification, new { @class = "form-control", placeholder = "Escribi tu dni" })
+                @Html.ValidationMessageFor(m => m.Identification, "", new { @class = "text-danger" })<br />
+            </td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Agregar" class="btn btn-success" /></td>
+        </tr>
+    </table>
+
+
+
+}
+
+

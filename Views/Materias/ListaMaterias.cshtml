@@ -1,0 +1,39 @@
+﻿@model List<Alkemy.Subjects>
+
+@{
+    ViewBag.Title = "ListaMaterias";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Lista de Materias</h2>
+
+<table class="table">
+
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Subject_Name)
+            </td>
+            <td>
+                @Html.ActionLink("Detalle", "Detalle", "Materias", new { id = item.Id }, null) |
+
+                @Html.ActionLink("Eliminar", "Eliminar", "Materias", new { id = item.Id }, null ) |
+
+                @Html.ActionLink("Editar", "Editar", "Materias", new { id = item.Id }, null)
+
+
+            </td>
+        </tr>
+
+
+    }
+
+</table>
+
+<td>
+    @Html.ActionLink("Agregar un nueva materia", "agregar", "Materias")
+
+</td>

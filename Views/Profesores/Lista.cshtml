@@ -1,0 +1,40 @@
+﻿@model List<Alkemy.Teachers>
+
+@{
+    ViewBag.Title = "Lista";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Lista de profesores</h2>
+<table class="table">
+
+
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name_)
+        </td>
+        <td>
+            @Html.ActionLink("Detalle", "Detalle", "Profesores", new { id = item.Id }, null) |
+
+            @Html.ActionLink("Eliminar", "Eliminar", "Profesores", new { id = item.Id }, null) | 
+
+            @Html.ActionLink("Editar", "Editar", "Profesores", new { id = item.Id }, null)
+
+
+        </td>
+    </tr>
+
+
+    }
+
+</table>
+
+<td>
+    @Html.ActionLink("Agregar un nuevo profesor", "agregar", "Profesores")
+
+</td>
+
+

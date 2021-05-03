@@ -1,0 +1,13 @@
+﻿@model Alkemy.Models.MateriaDetalleViewModel
+@{
+    ViewBag.Title = "Detalle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Materia</h2>
+<h4>La materia sera dada por el profesor @Model.Profesor en el horario de las @Model.Horario hs. Donde el cupo maximo es de @Model.CupMax personas.</h4>
+
+
+<div>
+    @Html.ActionLink("<<<  Volver a la lista", "ListaMaterias")
+</div>
